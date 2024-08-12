@@ -1,12 +1,10 @@
 package iftm.edu.br.dnolavo.encapsulamento;
 
-public class Cliente {
+public abstract class Cliente {
     private String nome;
-    private String tipo; // "PessoaFisica" ou "PessoaJuridica"
 
-    public Cliente(String nome, String tipo) {
+    public Cliente(String nome) {
         this.nome = nome;
-        this.tipo = tipo;
     }
 
     public String getNome() {
@@ -17,11 +15,6 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+    // Método abstrato para aplicar o desconto, a ser implementado pelas subclasses
+    public abstract double aplicarDesconto(double precoBase);
 }
